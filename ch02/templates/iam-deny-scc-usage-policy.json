@@ -1,0 +1,18 @@
+{
+    "displayName": "Deny usage of Security Command Center API.",
+    "rules": [
+        {
+            "denyRule": {
+                "deniedPrincipals": [
+                    "principalSet://goog/public:all"
+                ],
+                "exceptionPrincipals": [
+                    "principalSet://goog/group/gcp-security-admins@dariokart.com"
+                ],
+                "deniedPermissions": [
+                    "securitycenter.googleapis.com/."
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+jobs:
+  job_id:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - uses: 'actions/checkout@v4'
+
+    - id: 'auth'
+      name: 'Authenticate to GCP'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        token_format: 'access_token'
+        workload_identity_provider: 'projects/my-project-id/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        service_account: 'gke-cicd@my-project-id.iam.gserviceaccount.com'
+        access_token_lifetime: '300s' # optional, default: '3600s' (1 hour)
+
+    # Example of using the output. The token is usually provided as a Bearer
+    # token.
+    - id: 'access-secret'
+      run: |-
+        curl https://secretmanager.googleapis.com/v1/projects/my-project/secrets/my-secret/versions/1:access \
+          --header "Authorization: Bearer ${{ steps.auth.outputs.access_token }}"
