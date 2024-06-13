@@ -1,0 +1,39 @@
+{
+    "deidentifyConfig": {
+        "infoTypeTransformations": {
+            "transformations": [
+                {
+                    "infoTypes": [
+                        {
+                            "name": "VEHICLE_IDENTIFICATION_NUMBER"
+                        }
+                    ],
+                    "primitiveTransformation": {
+                        "cryptoReplaceFfxFpeConfig": {
+                            "cryptoKey": {
+                                "kmsWrapped": {
+                                    "wrappedKey": "CIPHERTEXT_OF_YOUR_WRAPPED_KEY",
+                                    "cryptoKeyName": "projects/PROJECT_ID/locations/global/keyRings/KEY_RING/cryptoKeys/KEY"
+                                }
+                            },
+                            "surrogateInfoType": {
+                                "name": "VEHICLE_IDENTIFICATION_NUMBER_TOKEN"
+                            },
+                            "commonAlphabet": "UPPER_CASE_ALPHA_NUMERIC"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "inspectConfig": {
+        "infoTypes": [
+            {
+                "name": "VEHICLE_IDENTIFICATION_NUMBER"
+            }
+        ]
+    },
+    "item": {
+      "value": "My car VIN is: VIN_TO_DEIDENTIFY."
+    }
+  }

@@ -1,0 +1,4 @@
+    globalPolicyEvaluationMode: ENABLE
+    defaultAdmissionRule:
+      evaluationMode: ALWAYS_DENY
+      enforcementMode: ENFORCED_BLOCK_AND_AUDIT_LOG

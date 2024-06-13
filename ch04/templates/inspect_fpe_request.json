@@ -1,0 +1,22 @@
+{
+    "inspectConfig": {
+        "infoTypes": [
+            {
+                "name": "VEHICLE_IDENTIFICATION_NUMBER"
+            }
+        ],
+        "customInfoTypes": [
+            {
+                "infoType": {
+                    "name": "VEHICLE_IDENTIFICATION_NUMBER_TOKEN"
+                },
+                "surrogateType": {
+ 
+                }
+            }
+        ]
+    },
+    "item": {
+        "value": "My car VIN is: VEHICLE_IDENTIFICATION_NUMBER_TOKEN(17):VIN_TO_INSPECT."
+    }
+  }

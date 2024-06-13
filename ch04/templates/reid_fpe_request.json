@@ -1,0 +1,49 @@
+{
+    "reidentifyConfig": {
+        "infoTypeTransformations": {
+            "transformations": [
+                {
+                    "infoTypes": [
+                        {
+                            "name": "VEHICLE_IDENTIFICATION_NUMBER_TOKEN"
+                        }
+                    ],
+                    "primitiveTransformation": {
+                        "cryptoReplaceFfxFpeConfig": {
+                            "cryptoKey": {
+                                "kmsWrapped": {
+                                    "wrappedKey": "CIPHERTEXT_OF_YOUR_WRAPPED_KEY",
+                                    "cryptoKeyName": "projects/PROJECT_ID/locations/global/keyRings/KEY_RING/cryptoKeys/KEY"
+                                }
+                            },
+                            "surrogateInfoType": {
+                                "name": "VEHICLE_IDENTIFICATION_NUMBER_TOKEN"
+                            },
+                            "commonAlphabet": "UPPER_CASE_ALPHA_NUMERIC"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "inspectConfig": {
+        "infoTypes": [
+            {
+                "name": "VEHICLE_IDENTIFICATION_NUMBER"
+            }
+        ],
+        "customInfoTypes": [
+            {
+                "infoType": {
+                    "name": "VEHICLE_IDENTIFICATION_NUMBER_TOKEN"
+                },
+                "surrogateType": {
+ 
+                }
+            }
+        ]
+    },
+    "item": {
+        "value": "My car VIN is: VEHICLE_IDENTIFICATION_NUMBER_TOKEN(17):VIN_TO_REIDENTIFY."  
+    }
+  }

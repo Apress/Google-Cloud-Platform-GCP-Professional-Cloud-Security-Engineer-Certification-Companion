@@ -1,0 +1,18 @@
+# Custom Module Definition for Self-Healing Exposed Buckets
+module_id: my-self-healing-bucket-module
+display_name: Self-Healing Bucket Module
+
+# Specify the resource types to scan (e.g., Google Cloud Storage buckets)
+resource_selector:
+  resource_types:
+    - storage.googleapis.com/Bucket
+
+# Define CEL expressions to trigger findings
+predicate:
+  expression: resource.iamConfiguration.publicAccessPrevention == "enforced"
+
+# Self-healing action (example: enforce public access prevention)
+action:
+  name: "Enforce Public Access Prevention"
+  description: "Automatically enforce public access prevention on the bucket."
+  command: "gcloud storage buckets update BUCKET_NAME --public-access-prevention=enforced"

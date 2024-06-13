@@ -1,0 +1,7 @@
+[
+    {
+    "uri": "https://compute.googleapis.com/compute/beta/projects/PROJECT_ID/zones/YOUR_VM_ZONE/disks/YOUR_VM",
+    "key": "YOUR_CSEK_KEY",
+    "key-type": "rsa-encrypted"
+    }
+]
