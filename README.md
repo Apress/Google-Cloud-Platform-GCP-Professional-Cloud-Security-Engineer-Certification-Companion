@@ -1,6 +1,6 @@
 # Apress Source Code
 
-This repository accompanies [*Google Cloud Platform (GCP) Professional Cloud Security Engineer Certification Companion*](https://www.link.springer.com/book/10.1007/979-8-8688-0236-2) by Dario Cabianca (Apress, 2024).
+This repository accompanies [*Google Cloud Platform (GCP) Professional Cloud Security Engineer Certification Companion*](https://link.springer.com/book/10.1007/979-8-8688-0236-2) by Dario Cabianca (Apress, 2024).
 
 [comment]: #cover
 ![Cover image](979-8-8688-0235-5.jpg)
